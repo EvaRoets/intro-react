@@ -5,7 +5,7 @@ import TodoList from "./TodoList";
 //Access root of entire application
 function App() {
    // Object destructuring: Use default array for to-dos, saved in const (all to-dos, function to update to-dos)
-    const [todos, setTodos] = useState(['To do 1', 'To do 2', 'To do 3'])
+    const [todos, setTodos] = useState([{id : 1, name: 'To-do 1', complete: false}])
   //Add html for to-do app
   return (
     // empty component = fragment, allowing to add multiple JSX elements in 1 function

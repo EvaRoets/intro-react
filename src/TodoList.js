@@ -6,7 +6,7 @@ export default function TodoList({ todos }) {
         // loop over todos with .map
         // add keys to todos ~ htlm id
         todos.map(todo => {
-            return <Todo key ={todo} todo={todo} />
+            return <Todo key ={todo.id} todo={todo} />
         })
     )
 }
