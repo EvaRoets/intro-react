@@ -1,9 +1,10 @@
 import React from 'react'
 
-export default function TodoList() {
+export default function TodoList( {todos} ) {
     return (
         <div>
-        Hello world!
+            {/*curly brackets indicate beginning of JS: print out number of todos*/}
+            {todos.length}
         </div>
     )
 }

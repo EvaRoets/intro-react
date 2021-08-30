@@ -1,6 +1,5 @@
 // Import state hook for function component to be rendered every time it changes
 import React, { useState} from "react";
-import React from 'react';
 import TodoList from "./TodoList";
 
 //Access root of entire application
@@ -11,7 +10,7 @@ function App() {
   return (
     // empty component = fragment, allowing to add multiple JSX elements in 1 function
     <>
-      /*1st JSX element with passed props todos ~ html attribute */>
+      {/*1st JSX element with passed props todos ~ html attribute */}
       <TodoList todos = {todos}/>
       <input type="text"/>
       <button>Add To-do</button>
