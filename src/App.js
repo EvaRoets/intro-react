@@ -4,6 +4,8 @@ import React, { useState, useRef } from "react";
 import './css/style.css';
 import TodoList from "./TodoList";
 import Footer from "./components/footer";
+// import uuidv4 from 'uuid/v4'
+
 
 //Access root of entire application
 function App() {
@@ -24,8 +26,10 @@ function App() {
         //Take previous to-dos with function call
         setTodos(prevTodos => {
             return [...prevTodos,
-                //Add new to-dos
+                //Add new to-dos, with uuidv4 function to generate random IDs
+                // TODO { id: uuidv4(), name: name, complete: false}]
                 { id: 1, name: name, complete: false}]
+
         })
 
         // Clear out input field after clicking
