@@ -14,15 +14,21 @@ function App() {
 
     //Add function to handle button click
     function AddTodo (event) {
-        //TODO take previous to-dos
-        //TODO add new to-dos
         //TODO set new current to-dos
 
         //Access input tag value
         const name = todoNameRef.current.value
         // If there is no to-do,  return so there is no empty to do
         if (name === '') return
-        console.log (name)
+
+        //Take previous to-dos with function call
+        setTodos(prevTodos => {
+            return [...prevTodos,
+                //Add new to-dos
+                { id: 1, name: name, complete: false}]
+        })
+
+        // Clear out input field after clicking
         todoNameRef.current.value = null
 
     }
