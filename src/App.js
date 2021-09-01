@@ -19,7 +19,7 @@ function App() {
     const todoNameRef = useRef()
 
     // Define key in const for useEffect function
-    const localStorageKey = 'todoApp.todos'
+    const localStorageKey = 'TodoList.todos'
 
     // Add function to load saved to-dos after refresh
     // Use an empty array to call the function only once
@@ -69,7 +69,7 @@ function App() {
             {/*Add function to handle the button click*/}
             <button onClick={AddTodo}>Add To-do</button>
             <button>Clear Completed To-dos</button>
-            <div>0 left To-do</div>
+            <div> {todos.filter(todo => !todo.complete).length} left To-do</div>
             <Footer/>
         </>
     );
