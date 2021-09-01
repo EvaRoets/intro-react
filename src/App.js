@@ -21,7 +21,14 @@ function App() {
     // Define key in const for useEffect function
     const localStorageKey = 'todoApp.todos'
 
-
+    // Add function to load saved to-dos after refresh
+    // Use an empty array to call the function only once
+    useEffect(() =>{
+        // converse string to array with parse
+        const storedTodos = JSON.parse(localStorage.getItem(localStorageKey))
+        // set to-dos to stored to-dos if there are stored to-dos
+        if (storedTodos) setTodos(storedTodos)
+    }, [])
 
     // Add function to save our to-dos everytime these to-dos change
     // with 1st parameter effect = another function to do things, 2nd parameter dependencies = array of properties
