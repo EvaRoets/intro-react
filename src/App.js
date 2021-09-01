@@ -37,6 +37,7 @@ function App() {
     }, [todos])
 
     // Add function to toggle to-dos from incomplete to complete
+    // Resets to-do variable to new list of to-dos
     function checkOffTodo (id){
         // create copy of todolist to ensure not changing the current one, which is a state variable that cannot be changed inside react
         const newTodos = [...todos]
@@ -45,7 +46,7 @@ function App() {
         setTodos(newTodos)
     }
 
-    //Add function to handle button click
+    //Add function to handle button click 'add to-do'
     function AddTodo (event) {
         //Access input tag value
         const name = todoNameRef.current.value
@@ -61,7 +62,13 @@ function App() {
 
         // Clear out input field after clicking
         todoNameRef.current.value = null
+    }
 
+    // Add function to handle button click 'clear to-dos'
+    // set to-dos to the new list that doesn't contain any of the cmopleted to-dos
+    function ClearTodo() {
+        const newTodos = todos.filter(todo => !todo.complete)
+        setTodos(newTodos)
     }
 
     //Add html for to-do app
@@ -74,7 +81,7 @@ function App() {
             <input type="text" ref={todoNameRef}/>
             {/*Add function to handle the button click*/}
             <button onClick={AddTodo}>Add To-do</button>
-            <button>Clear Completed To-dos</button>
+            <button onClick={ClearTodo}>Clear Completed To-dos</button>
             <div> {todos.filter(todo => !todo.complete).length} left To-do</div>
             <Footer/>
         </>
