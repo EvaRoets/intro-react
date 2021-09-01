@@ -36,8 +36,14 @@ function App() {
         localStorage.setItem(localStorageKey, JSON.stringify(todos))
     }, [todos])
 
-
-
+    // Add function to toggle to-dos from incomplete to complete
+    function checkOffTodo (id){
+        // create copy of todolist to ensure not changing the current one, which is a state variable that cannot be changed inside react
+        const newTodos = [...todos]
+        const todo = newTodos.find(todo => todo.id === id)
+        todo.complete = !todo.complete
+        setTodos(newTodos)
+    }
 
     //Add function to handle button click
     function AddTodo (event) {
@@ -63,7 +69,7 @@ function App() {
         // empty component = fragment, allowing to add multiple JSX elements in 1 function
         <>
             {/*1st JSX element with passed props todos ~ html attribute */}
-            <TodoList todos={todos}/>
+            <TodoList todos={todos} checkOffTodo={checkOffTodo}/>
             {/*set ref to a variable so it is accessible through useRef inside function */}
             <input type="text" ref={todoNameRef}/>
             {/*Add function to handle the button click*/}
