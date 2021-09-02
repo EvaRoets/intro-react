@@ -16,8 +16,7 @@ You will build a small to-do application that lives in your browser and saves to
 - Publish the source code on your GitHub repository
 - Build a to-do app with React.js
 - Save your to-dos, even after starting the browser again
-- Deploy the project on a live server
-  _Tip if you choose Netlify: to deploy a React app you first run the command `npm run build`, and once the command finishes you will have your app ready in the `build` folder: just drag and drop this folder in Netlify and you are done. Easy!_
+- Deploy the project on [a live server](https://competent-curie-7ba046.netlify.app/)
 
 ### 🌼 Nice-to-haves (doable)
 - Refactor parts you aren't happy with.
