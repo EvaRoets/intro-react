@@ -23,7 +23,6 @@ function App() {
     const localStorageKey = 'TodoList.todos'
 
 
-
     // Add function to load saved to-dos after refresh
     // Use an empty array to call the function only once
     useEffect(() => {
@@ -80,14 +79,19 @@ function App() {
         <>
             <Header/>
             <div className="container">
+                <h2>To-do list</h2>
                 {/*1st JSX element with passed props todos ~ html attribute */}
-                <TodoList todos={todos} checkOffTodo={checkOffTodo}/>
+                <div className="todoList">
+                    <TodoList todos={todos} checkOffTodo={checkOffTodo}/>
+                </div>
                 {/*set ref to a variable so it is accessible through useRef inside function */}
-                <input type="text" ref={todoNameRef} placeholder="Add your to-do"/>
+                <input type="text" ref={todoNameRef} placeholder="Add your to-do..."/>
                 {/*Add function to handle the button click*/}
-                <button onClick={AddTodo} >Add To-do ✔️</button>
-                <button onClick={ClearTodo} >Clear Completed To-dos ❌</button>
-                <div className="whatIsLeft"> {todos.filter(todo => !todo.complete).length} To-do(s) left!</div>
+                <div className="buttonfield">
+                    <button onClick={AddTodo}>Add ✔️</button>
+                    <button onClick={ClearTodo}>Clear ❌</button>
+                </div>
+                <div className="whatIsLeft"> Only {todos.filter(todo => !todo.complete).length} To-do(s) left...!</div>
             </div>
             <Footer/>
         </>

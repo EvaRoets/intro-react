@@ -8,7 +8,7 @@ export default function Todo({todo, checkOffTodo}) {
     return (
         <div className="todo">
             <label>
-                <input type="checkbox" checked={todo.complete} onChange={todoClick}/>
+                <input type="checkbox" checked={todo.complete} onChange={todoClick} className="checkbox-round"/>
                 {todo.name}
             </label>
         </div>
